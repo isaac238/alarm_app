@@ -72,8 +72,8 @@ class AlarmObject {
 }
 
 Future<File> getStorageFile() async {
-	final documentDirectory = await getExternalStorageDirectory();
-	final path = documentDirectory?.path;
+	final documentDirectory = await getApplicationDocumentsDirectory();
+	final path = documentDirectory.path;
 	print(path);
 	final file = File('$path/alarms.json');
 	return file;
